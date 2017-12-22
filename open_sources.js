@@ -1,4 +1,4 @@
-const open_sources = {
+let open_sources = {
   "100percentfedup.com": {
     type: "bias",
     "2nd type": "",
