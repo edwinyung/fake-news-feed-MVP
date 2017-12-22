@@ -1,0 +1,13 @@
+{
+  "development": {
+    "database": "Fake_News",
+    "host": "localhost"
+  },
+  "test": {
+    "database": "Fake_News",
+    "host": "localhost"
+  },
+  "production": {
+    "use_env_variable": "MONGO_URL"
+  }
+}
