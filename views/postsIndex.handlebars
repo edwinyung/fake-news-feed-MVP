@@ -1,0 +1,47 @@
+<header class="page-header">
+  <h1>Posts</h1>
+</header>
+
+{{#if posts.length }}
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Body</th>
+        <th>Type</th>
+        <th>2nd Type</th>
+        <th>3rd Type</th>
+        <th>Notes</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each posts as |post| }}
+        <tr>
+          <td>
+            <a href="{{ post.article_url }}">{{ post.title }}</a>
+          </td>
+          <td>
+            <a href="/{{ post.id }}">{{ post.body }}</a>
+          </td>
+          <td>
+            <a href="/{{ post.id }}">{{ post.type }}</a>
+          </td>
+          <td>
+            <a href="/{{ post.id }}">{{ post.type2 }}</a>
+          </td>
+          <td>
+            <a href="/{{ post.id }}">{{ post.type3 }}</a>
+          </td>
+          <td>
+            <a href="/{{ post.id }}">{{ post.Notes }}</a>
+          </td>
+          <td>
+            <a href="/{{ post.id }}">More Information</a>
+          </td>
+        </tr>
+      {{/each }}
+    </tbody>
+  </table>
+{{else }}
+  <p class="text-danger">No posts</p>
+{{/if }}

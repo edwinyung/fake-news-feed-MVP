@@ -5,8 +5,8 @@ var PostSchema = new Schema(
   {
     title: String, //news_api
     body: String, //news_api
-    postLink: String, //news_api
-    source: String, //open_sources
+    article_url: String, //news_api
+    source: String, //news_api
     type: String, //open_sources
     type2: String, //open_sources
     type3: String, //open_sources

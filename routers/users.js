@@ -3,22 +3,17 @@ const router = express.Router();
 const mongoose = require("mongoose");
 const models = require("./../models");
 const User = mongoose.model("User");
-const helpers = require("./../helpers");
-const h = helpers.registered;
+var Post = mongoose.model("Post");
 
 module.exports = middlewares => {
   // Extract middlewares
   const { loggedInOnly, loggedOutOnly } = middlewares;
 
-  // ----------------------------------------
-  // Show
-  // ----------------------------------------
   const onShow = (req, res) => {
     res.render("users/show", { currentUser: req.user });
   };
 
   // Showing a user only if logged in
-  router.get("/", loggedInOnly, onShow);
   router.get("/user", loggedInOnly, onShow);
 
   // ----------------------------------------
@@ -42,8 +37,9 @@ module.exports = middlewares => {
       email: req.body.user.email,
       password: req.body.user.password
     };
-
-    User.create(userParams)
+    let user = new User(userParams);
+    user
+      .save()
       .then(user => {
         req.flash("success", "User created! You may now login.");
         res.redirect("/login");

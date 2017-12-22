@@ -196,7 +196,14 @@ const usersRouter = require("./routers/users")({
 app.use("/", usersRouter);
 
 // // Setup API router
-const newsRouter = require("./routers/news");
+const seedsRouter = require("./seeds/index");
+app.use("/", seedsRouter);
+
+// Pass logged in/out middlewares to users router
+const newsRouter = require("./routers/news")({
+  loggedInOnly,
+  loggedOutOnly
+});
 app.use("/", newsRouter);
 
 // ----------------------------------------
@@ -213,7 +220,6 @@ const hbs = expressHandlebars.create({
 
 app.engine("handlebars", hbs.engine);
 app.set("view engine", "handlebars");
-
 // ----------------------------------------
 // Server
 // ----------------------------------------
