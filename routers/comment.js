@@ -8,7 +8,7 @@ var Comment = mongoose.model("Comment");
 
 router.post("/:parentId", (req, res) => {
   var comment = new Comment({
-    author: req.cookies.userId,
+    author: req.user.id,
     body: req.body.comment.body,
     parent: req.params.parentId
   });

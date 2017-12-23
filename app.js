@@ -206,6 +206,9 @@ const newsRouter = require("./routers/news")({
 });
 app.use("/", newsRouter);
 
+// Pass logged in/out middlewares to users router
+const commentRouter = require("./routers/comment");
+app.use("/comments", commentRouter);
 // ----------------------------------------
 // Template Engine
 // ----------------------------------------

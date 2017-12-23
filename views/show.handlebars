@@ -27,7 +27,9 @@
     </tr>
   </tbody>
 </table>
-
+{{#each post.comments as |comment|}}
+AuthorID: {{comment}}
+{{/each}}
 <div style="width:500px">
 <form action="/comments/{{post.id}}" method="post">
   <div class="form-group">
@@ -40,25 +42,3 @@
   </div>
 </form>
 </div>
-
-
-    {{#each post.comments as |child|}}
-    <div class="container" style="margin-left: 50px;width:500px">
-      <div class="row">
-        <div class="col-md-2"><strong>Author: </strong>{{child.author.username}}</div>
-        <div class="col-md-10"><strong>Body: </strong>{{ child.body }}</div>
-      </div>
-
-      <form action="/comments/{{child.id}}" method="post">
-        <div class="form-group">
-        <label for="comment_body">Comment Here!</label>
-        <input type="text" id="comment_body" name="comment[body]" class="form-control">
-        </div>
-
-        <div class="form-group">
-        <input type="submit" class="btn btn-primary">
-        </div>
-      </form>
-      </div>
-
-{{/each}}
