@@ -30,6 +30,5 @@ I pull the breaking news data from https://newsapi.org/, and I cross reference t
 3. Stop database from seeding every time the app is accessed
 
 ###Sources:
-Viking Code School for boilerplate, generated code
 https://newsapi.org/
 Open Sources (http://www.opensources.co/)
