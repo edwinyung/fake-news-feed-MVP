@@ -1,6 +1,4 @@
-# nov-hackaton-studious-chainsaw
-
-HACKATON NOV 2017
+# Fake News Feed
 
 ![alt text](screenshots/index.png "Index Screenshot")
 ![alt text](screenshots/post.png "Individual Article Screenshot")
@@ -31,4 +29,5 @@ I pull the breaking news data from https://newsapi.org/, and I cross reference t
 
 ###Sources:
 https://newsapi.org/
+
 Open Sources (http://www.opensources.co/)
